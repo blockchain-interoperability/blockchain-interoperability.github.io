@@ -21,7 +21,7 @@ import { Route, Switch, Redirect, useLocation } from "react-router-dom";
 import PerfectScrollbar from "perfect-scrollbar";
 
 // core components
-import AdminNavbar from "components/Navbars/AdminNavbar.js";
+import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
@@ -33,7 +33,7 @@ import { BackgroundColorContext } from "contexts/BackgroundColorContext";
 
 var ps;
 
-function Admin(props) {
+function MainPage(props) {
   const location = useLocation();
   const mainPanelRef = React.useRef(null);
   const [sidebarOpened, setsidebarOpened] = React.useState(
@@ -80,22 +80,24 @@ function Admin(props) {
   };
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
-      if (prop.layout === "/admin") {
+      // if (prop.layout === "/") {
         return (
           <Route
-            path={prop.layout + prop.path}
+            // path={prop.layout + prop.path}
+            path = {prop.path}
             component={prop.component}
             key={key}
           />
         );
-      } else {
-        return null;
-      }
+      // } else {
+      //   return null;
+      // }
     });
   };
   const getBrandText = (path) => {
     for (let i = 0; i < routes.length; i++) {
-      if (location.pathname.indexOf(routes[i].layout + routes[i].path) !== -1) {
+      // if (location.pathname.indexOf(routes[i].layout + routes[i].path) !== -1) {
+      if (location.pathname.indexOf(routes[i].path) !== -1) {
         return routes[i].name;
       }
     }
@@ -108,34 +110,34 @@ function Admin(props) {
           <div className="wrapper">
             <Sidebar
               routes={routes}
-              logo={{
-                outterLink: "https://www.creative-tim.com/",
-                text: "Creative Tim",
-                imgSrc: logo
-              }}
+              // logo={{
+              //   outterLink: "https://www.creative-tim.com/",
+              //   text: "Creative Tim",
+              //   imgSrc: logo
+              // }}
               toggleSidebar={toggleSidebar}
             />
             <div className="main-panel" ref={mainPanelRef} data={color}>
-              <AdminNavbar
+              <Navbar
                 brandText={getBrandText(location.pathname)}
                 toggleSidebar={toggleSidebar}
                 sidebarOpened={sidebarOpened}
               />
               <Switch>
                 {getRoutes(routes)}
-                <Redirect from="*" to="/admin/dashboard" />
+                <Redirect from="*" to="/dashboard" />
               </Switch>
               {
                 // we don't want the Footer to be rendered on map page
-                location.pathname === "/admin/maps" ? null : <Footer fluid />
+                location.pathname === "/maps" ? null : <Footer fluid />
               }
             </div>
           </div>
-          <FixedPlugin bgColor={color} handleBgClick={changeColor} />
+          {/* <FixedPlugin bgColor={color} handleBgClick={changeColor} /> */}
         </React.Fragment>
       )}
     </BackgroundColorContext.Consumer>
   );
 }
 
-export default Admin;
+export default MainPage;

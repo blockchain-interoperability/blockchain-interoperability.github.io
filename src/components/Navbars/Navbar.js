@@ -30,7 +30,7 @@ import {
   Input,
   InputGroup,
   NavbarBrand,
-  Navbar,
+  Navbar as StrapNavBar,
   NavLink,
   Nav,
   Container,
@@ -39,7 +39,7 @@ import {
   ModalHeader
 } from "reactstrap";
 
-function AdminNavbar(props) {
+function Navbar(props) {
   const [collapseOpen, setcollapseOpen] = React.useState(false);
   const [modalSearch, setmodalSearch] = React.useState(false);
   const [color, setcolor] = React.useState("navbar-transparent");
@@ -73,7 +73,7 @@ function AdminNavbar(props) {
   };
   return (
     <>
-      <Navbar className={classNames("navbar-absolute", color)} expand="lg">
+      <StrapNavBar className={classNames("navbar-absolute", color)} expand="lg">
         <Container fluid>
           <div className="navbar-wrapper">
             <div
@@ -87,8 +87,14 @@ function AdminNavbar(props) {
                 <span className="navbar-toggler-bar bar3" />
               </NavbarToggler>
             </div>
-            <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
-              {props.brandText}
+            <NavbarBrand 
+              href="/" 
+              onClick={(e) => e.preventDefault()}
+            >
+              <b>
+                Blockchain Interoperability
+              </b>
+              {/* {props.brandText} */}
             </NavbarBrand>
           </div>
           <NavbarToggler onClick={toggleCollapse}>
@@ -104,7 +110,7 @@ function AdminNavbar(props) {
                   <span className="d-lg-none d-md-block">Search</span>
                 </Button>
               </InputGroup>
-              <UncontrolledDropdown nav>
+              {/* <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
                   color="default"
@@ -142,8 +148,8 @@ function AdminNavbar(props) {
                     </DropdownItem>
                   </NavLink>
                 </DropdownMenu>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav>
+              </UncontrolledDropdown> */}
+              {/* <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
                   color="default"
@@ -168,12 +174,12 @@ function AdminNavbar(props) {
                     <DropdownItem className="nav-item">Log out</DropdownItem>
                   </NavLink>
                 </DropdownMenu>
-              </UncontrolledDropdown>
-              <li className="separator d-lg-none" />
+              </UncontrolledDropdown> */}
+              {/* <li className="separator d-lg-none" /> */}
             </Nav>
           </Collapse>
         </Container>
-      </Navbar>
+      </StrapNavBar>
       <Modal
         modalClassName="modal-search"
         isOpen={modalSearch}
@@ -194,4 +200,4 @@ function AdminNavbar(props) {
   );
 }
 
-export default AdminNavbar;
+export default Navbar;
