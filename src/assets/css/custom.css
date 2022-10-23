@@ -1,0 +1,10 @@
+tr.tr-clickable{
+    cursor: pointer;
+}
+
+tr.tr-clickable:hover{
+    /* border-width: 2; */
+    background-color: rgb(72, 121, 199);
+}
+
+

@@ -15,6 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+import AttackDashboard from "views/AttackDashboard.js";
 import Dashboard from "views/Dashboard.js";
 import Icons from "views/Icons.js";
 import Map from "views/Map.js";
@@ -26,12 +27,15 @@ import UserProfile from "views/UserProfile.js";
 
 var routes = [
   {
+    path: "/attacks",
+    name: "Attacks",
+    component: AttackDashboard,
+  },
+  {
     path: "/dashboard",
     name: "Dashboard",
-    rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chart-pie-36",
     component: Dashboard,
-    layout: "/admin"
   },
   // {
   //   path: "/icons",

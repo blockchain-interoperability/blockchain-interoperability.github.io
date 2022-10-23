@@ -90,11 +90,9 @@ function Navbar(props) {
             <NavbarBrand 
               href="/" 
               onClick={(e) => e.preventDefault()}
+              style={{fontSize:'24px',fontWeight:'bold'}}
             >
-              <b>
-                Blockchain Interoperability
-              </b>
-              {/* {props.brandText} */}
+              Blockchain Interoperability Dashboard
             </NavbarBrand>
           </div>
           <NavbarToggler onClick={toggleCollapse}>

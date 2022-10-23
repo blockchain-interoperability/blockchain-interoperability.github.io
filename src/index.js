@@ -30,6 +30,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import ThemeContextWrapper from "./components/ThemeWrapper/ThemeWrapper";
 import BackgroundColorWrapper from "./components/BackgroundColorWrapper/BackgroundColorWrapper";
 
+
+import 'assets/css/custom.css'
+
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
@@ -39,7 +44,7 @@ root.render(
         <Switch>
           <Route path="/" render={(props) => <MainPageLayout {...props} />} />
           {/* <Route path="/rtl" render={(props) => <RTLLayout {...props} />} /> */}
-          <Redirect from="/" to="/dashboard" />
+          <Redirect from="/" to="/attacks" />
         </Switch>
       </BrowserRouter>
     </BackgroundColorWrapper>
