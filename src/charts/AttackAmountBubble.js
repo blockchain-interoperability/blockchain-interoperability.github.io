@@ -114,7 +114,7 @@ const AttackAmountBubble = ({data}) => {
             labels: data.map(attack => attack.date),
             datasets: [
                 {
-                    // label: "USD stolen from attacks",
+                    label: "Amount stolen from attacks",
                     fill: true,
                     backgroundColor: data.map(
                         attack => 

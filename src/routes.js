@@ -31,12 +31,12 @@ var routes = [
     name: "Attacks",
     component: AttackDashboard,
   },
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: "tim-icons icon-chart-pie-36",
-    component: Dashboard,
-  },
+  // {
+  //   path: "/dashboard",
+  //   name: "Dashboard",
+  //   icon: "tim-icons icon-chart-pie-36",
+  //   component: Dashboard,
+  // },
   // {
   //   path: "/icons",
   //   name: "Icons",
@@ -69,14 +69,14 @@ var routes = [
   //   component: UserProfile,
   //   layout: "/admin"
   // },
-  {
-    path: "/tables",
-    name: "Table List",
-    rtlName: "قائمة الجدول",
-    icon: "tim-icons icon-puzzle-10",
-    component: TableList,
-    layout: "/admin"
-  },
+  // {
+  //   path: "/tables",
+  //   name: "Table List",
+  //   rtlName: "قائمة الجدول",
+  //   icon: "tim-icons icon-puzzle-10",
+  //   component: TableList,
+  //   layout: "/admin"
+  // },
   // {
   //   path: "/typography",
   //   name: "Typography",

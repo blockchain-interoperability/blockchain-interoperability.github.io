@@ -88,7 +88,7 @@ const AttackAmountLine = ({data}) => {
             labels: data.map(attack => attack.date),
             datasets: [
                 {
-                    label: "USD stolen from attacks",
+                    label: "Amount stolen from attacks",
                     fill: true,
                     backgroundColor: gradientStroke,
                     borderColor: "#1f8ef1",

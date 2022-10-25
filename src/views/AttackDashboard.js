@@ -58,6 +58,7 @@ const AttackDashboard = () => {
         let date = new Date(attack.date)
         return {
             ...attack, 
+            tags: attack.tags.join(' / '),
             date: date.toDateString(),
         }
     })
