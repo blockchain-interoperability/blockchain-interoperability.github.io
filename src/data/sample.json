@@ -1,43 +1,43 @@
 [
     {
-        "ProjectName": "Polkadot",
-        "ActiveAddressCount": 22000,
-        "CirculationSupply":12430000,
-        "TotalSupply": 11540000,
-        "Explorer": "https://explorer.polkascan.io/",
-        "Extra": {
+        "projectName": "Polkadot",
+        "activeAddressCount": 22000,
+        "circulationSupply":12430000,
+        "totalSupply": 11540000,
+        "explorerLink": "https://explorer.polkascan.io/",
+        "extra": {
             "something": "project specific information should be stored here"
         }
     },{
-        "ProjectName": "Cosmos",
-        "CirculationSupply":238525000 ,
-        "TotalSupply": 238525000,
-        "Explorer": "https://explorer.polkascan.io/",
-        "Extra": {
+        "projectName": "Cosmos",
+        "circulationSupply":238525000 ,
+        "totalSupply": 238525000,
+        "explorerLink": "https://explorer.polkascan.io/",
+        "extra": {
             "something": "project specific information should be stored here"
         }
     },{
-        "ProjectName": "Chainlink",
-        "CirculationSupply":491600000,
-        "TotalSupply": 1000000000,
-        "Explorer": "https://explorer.chain.link/",
-        "Extra": {
+        "projectName": "Chainlink",
+        "circulationSupply":491600000,
+        "totalSupply": 1000000000,
+        "explorerLink": "https://explorer.chain.link/",
+        "extra": {
             "something": "project specific information should be stored here"
         }
     },{
-        "ProjectName": "Loom Network",
-        "CirculationSupply":602423000,
-        "TotalSupply": 1000000000,
-        "Explorer": "https://etherscan.io/token/0x42476f744292107e34519f9c357927074ea3f75d",
-        "Extra": {
+        "projectName": "Loom Network",
+        "circulationSupply":602423000,
+        "totalSupply": 1000000000,
+        "explorerLink": "https://etherscan.io/token/0x42476f744292107e34519f9c357927074ea3f75d",
+        "extra": {
             "something": "project specific information should be stored here"
         }
     },{
-        "ProjectName": "Hybrix",
-        "CirculationSupply":2273000,
-        "TotalSupply": 7000000000,
-        "Explorer": "https://etherscan.io/token/0x9b53e429b0badd98ef7f01f03702986c516a5715",
-        "Extra": {
+        "projectName": "Hybrix",
+        "circulationSupply":2273000,
+        "totalSupply": 7000000000,
+        "explorerLink": "https://etherscan.io/token/0x9b53e429b0badd98ef7f01f03702986c516a5715",
+        "extra": {
             "something": "project specific information should be stored here"
         }
     }

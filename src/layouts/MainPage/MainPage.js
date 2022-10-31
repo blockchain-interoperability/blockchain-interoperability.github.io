@@ -125,7 +125,7 @@ function MainPage(props) {
               />
               <Switch>
                 {getRoutes(routes)}
-                <Redirect from="*" to="/attacks" />
+                <Redirect from="*" to="/main-page" />
               </Switch>
               {
                 // we don't want the Footer to be rendered on map page
