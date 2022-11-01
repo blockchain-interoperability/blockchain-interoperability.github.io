@@ -19,6 +19,8 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
+import websiteBrand from '../../data/img/dashboard-title.png'
+
 // reactstrap components
 import {
   Button,
@@ -43,11 +45,14 @@ function Navbar(props) {
   const [collapseOpen, setcollapseOpen] = React.useState(false);
   const [modalSearch, setmodalSearch] = React.useState(false);
   const [color, setcolor] = React.useState("navbar-transparent");
+  const [width,setWidth] = React.useState(window.innerWidth)
   React.useEffect(() => {
     window.addEventListener("resize", updateColor);
+    window.addEventListener("resize", setWidth);
     // Specify how to clean up after this effect:
     return function cleanup() {
       window.removeEventListener("resize", updateColor);
+      window.removeEventListener("resize", setWidth);
     };
   });
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
@@ -90,9 +95,10 @@ function Navbar(props) {
             <NavbarBrand 
               href="/" 
               onClick={(e) => e.preventDefault()}
-              style={{fontSize:'24px',fontWeight:'bold'}}
+              style={{fontWeight:'bold'}}
             >
-              Blockchain Interoperability Dashboard
+              {/* <img src={websiteBrand} style={{width:width}}/> */}
+              Interoperability Dashboard
             </NavbarBrand>
           </div>
           <NavbarToggler onClick={toggleCollapse}>
