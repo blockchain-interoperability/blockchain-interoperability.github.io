@@ -24,12 +24,22 @@ import Rtl from "views/Rtl.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
 import UserProfile from "views/UserProfile.js";
+import MainView from "views/MainView";
+import ProjectsView from "views/ProjectsView";
 
 var routes = [
   {
+    path: "/main-page",
+    name: "Blockchain Interoperability",
+    component: MainView,
+  },{
     path: "/attacks",
     name: "Attacks",
     component: AttackDashboard,
+  },{
+    path: "/projects",
+    name: "Interoperability Projects",
+    component: ProjectsView,
   },
   { 
    path: "/dashboard",

@@ -17,7 +17,7 @@
 */
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import MainPageLayout from "layouts/MainPage/MainPage.js";
 import RTLLayout from "layouts/RTL/RTL.js";
@@ -40,13 +40,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ThemeContextWrapper>
     <BackgroundColorWrapper>
-      <BrowserRouter>
+      <HashRouter>
         <Switch>
-          <Route path="/" render={(props) => <MainPageLayout {...props} />} />
+          <Route path="*" render={(props) => <MainPageLayout {...props} />} />
           {/* <Route path="/rtl" render={(props) => <RTLLayout {...props} />} /> */}
-          <Redirect from="/" to="/attacks" />
+          {/* <Redirect from="/" to="/" /> */}
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </BackgroundColorWrapper>
   </ThemeContextWrapper>
 );
