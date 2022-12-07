@@ -31,12 +31,12 @@ var routes = [
     name: "Attacks",
     component: AttackDashboard,
   },
-  // {
-  //   path: "/dashboard",
-  //   name: "Dashboard",
-  //   icon: "tim-icons icon-chart-pie-36",
-  //   component: Dashboard,
-  // },
+  { 
+   path: "/dashboard",
+    name: "Dashboard",
+    icon: "tim-icons icon-chart-pie-36",
+   component: Dashboard,
+  },
   // {
   //   path: "/icons",
   //   name: "Icons",

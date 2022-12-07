@@ -6,6 +6,7 @@ import { Line, Bar } from "react-chartjs-2";
 
 import AttackAmountLine from '../charts/AttackAmountLine.js'
 import AttackAmountBubble from "charts/AttackAmountBubble.js";
+import AttackAmountDoughnut from "charts/AttackAmountDoughnut.js";
 
 import rawAttackData from '../data/attackData.json'
 
@@ -71,78 +72,126 @@ const AttackDashboard = () => {
         return parsed
     }
 
+    
     return (
     <>
         <div className="content">
-            <Card className="card-chart">
-            <CardHeader>
-                <CardTitle tag="h2">
-                    Total Amount Stolen from Attacks
-                </CardTitle>
-            </CardHeader>
-            <CardBody>
-                <AttackAmountLine data = {attackData}/>
-            </CardBody>
-            </Card>
-            <Card 
-                className="card-chart"
-                style={{
-                    height: '50vh'
-                }}
-            >
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><font size="6" color="#00FFFF"><b>Total Steals </b></font></h5>
+                        <p class="card-text"><font size="5" color="#808080"> <b>900000000000 </b></font></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><font size="6" color="#00FFFF"><b>Amount of Attacks </b></font></h5>
+                        <p class="card-text"><font size="5" color="#808080"> <b>Some data </b></font></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><font size="6" color="#00FFFF"><b>Most Recent Attack </b></font></h5>
+                        <p class="card-text"><font size="5" color="#808080"> <b>Some data </b></font></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card text-center">
+                    <div class="card-body">
+                        <h5 class="card-title"><font size="6" color="#00FFFF"><b>Average of Attacks </b></font></h5>
+                        <p class="card-text"><font size="5" color="#808080"> <b>Some data </b></font></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#29293E">
+            <tbody>
+            <tr>
+            <th valign="top">
+                <Card className="card-chart">
                 <CardHeader>
                     <CardTitle tag="h2">
-                        Attacks History
+                        Total Amount Stolen from Attacks
                     </CardTitle>
                 </CardHeader>
                 <CardBody>
-                    <AttackAmountBubble data = {attackData}/>
+                    <AttackAmountLine data = {attackData}/>
                 </CardBody>
-            </Card>
-            <Card>
+                </Card>
+            </th>
+            <th rowspan="2" width="60%">
+                <Card 
+                    class="position-absolute top-0 start-50 translate-middle-x"
+                    className="card-chart"
+                    style={{
+                        height: '100vh'
+                    }}
+                >
                 <CardHeader>
-                    <CardTitle tag="h2">Attack Data</CardTitle>
+                    <CardTitle tag="h2">
+                        Stolen Percentage
+                    </CardTitle>
                 </CardHeader>
                 <CardBody>
-                    <Table className="tablesorter" responsive>
-                        <thead className="text-primary">
-                            <tr>{
-                                columns.map(
-                                    col => (
-                                        <th className="text-center">
-                                            {col}
-                                        </th>
-                                    )
-                                )
-                            }
-                            </tr>
-                        </thead>
-                        <tbody>{
-                            attackData.slice(0).reverse().map(attack => (
-                                <tr 
-                                    className='tr-clickable'
-                                    onClick = {
-                                        () => {
-                                            window.open(
-                                                attack.ref,'_blank'
-                                            )
-                                        }
-                                    }
-                                >
-                                    {columns.map( col => (
-                                        <td
-                                            className="text-center"
-                                        >
-                                            {parseValue(col,attack[col])}
-                                        </td>
-                                    ))}
-                                </tr>
-                            ))
-                        }
-                        </tbody>
-                    </Table>
+                    <AttackAmountDoughnut data = {attackData}/>
                 </CardBody>
-            </Card>
+                </Card>
+            </th>
+            </tr>
+            <tr>
+            <th>
+                <Card 
+                    className="card-chart"
+                    style={{
+                        height: '50vh'
+                    }}
+                >
+                    <CardHeader>
+                        <CardTitle tag="h2">
+                            Attacks History
+                        </CardTitle>
+                    </CardHeader>
+                    <CardBody>
+                        <AttackAmountBubble data = {attackData}/>
+                    </CardBody>
+                </Card>
+            </th>
+            </tr>
+            </tbody>
+            </table>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card">
+                    <img src="https://polkadot.network/content/images/2021/12/Polkadot_OG.png" class="card-img-top">
+                    </img>
+                    <div class="card-body">
+                        <h5 class="card-title">Single Card for polkadot</h5>
+                        <p class="card-text">A short introduction about polkadot</p>
+                        <a href="https://polkadot.network/">Official website</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                    <img src="https://external-preview.redd.it/9uhvOEa7kxijQXkregqTYFVHSDqPQs7Fo8Ahiutj9w8.jpg?width=640&crop=smart&auto=webp&s=743eb1aa4b0821c0963f814af61457d65ac7c5d8" class="card-img-top" alt="111">
+                    </img>
+                    <div class="card-body">
+                        <h5 class="card-title">Single Card for cosmos</h5>
+                        <p class="card-text">A short introduction about cosmos</p>
+                        <a href="https://cosmos.network/">Official website</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
         </div>
     </>)
 
