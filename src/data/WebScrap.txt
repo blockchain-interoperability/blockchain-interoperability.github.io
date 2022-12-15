@@ -1,0 +1,119 @@
+# import from library
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+import json
+import re
+import json
+
+# Nomics is an API-first cryptoasset data company delivering professional-grade
+# market data APIs to institutional crypto investors & exchanges.
+url = "https://nomics.com/"
+
+# send request for real-time data
+s = requests.Session()
+
+# change cookie status to enable scraping data
+res = s.get(url)
+cookies = dict(res.cookies)
+res = s.post(url, 
+    verify=False, 
+    cookies=cookies)
+
+# use the designed function in BeautifulSoup to get information
+soup = BeautifulSoup(res.text, "html.parser")
+
+# pick specific paragraph of table that we need(crypto market data)
+table = soup.find_all("tr", {"class": "bb b--black-10 bn-last-tr n-table-ph n-bg-table-row tp-bc td-1 dash-row-visibility"})
+
+# data cleaning and preprocessing
+cleaned_table = []
+
+# iterator, unpurchased version could only get the data from top 10 blockchains
+iterator = 0
+for element in table:
+	iterator += 1
+	# data cleaning 
+	data = element.get_text()
+	data = data.replace("Buy Data", "")
+	data = data.replace("Unlock", "")
+	data = data.replace("Buy", "")
+	data = data.replace("—", "")
+	data = data.replace("-", " -")
+	data = data.replace("%", "% ")
+	data = data.replace("$", " $")
+	data = data.replace("  $", " $")
+	data = data.replace("  -", " -")
+
+	# separating the string and combine them with desired form
+	substrings = data.split()
+	if(iterator == 6):
+		fifth = substrings[5]
+		substrings[5] = fifth[:len(substrings)-3]
+
+	# deleting the duplicated value
+	substrings = list({substring: None for substring in substrings}.keys())
+	if(iterator == 7):
+		substrings.insert(1, "XRP")
+	substrings.pop(0)
+	data = " ".join(substrings)
+	
+
+	# again separating data that stick together(mistakes happened during file reading)
+	sub_string = data.split(" ")
+	if(iterator != 4 and iterator != 5 and iterator != 6):
+		temp_string = sub_string[5]
+		temp_string2 = sub_string[6]
+	if(iterator == 4 or iterator == 5 or iterator == 6):
+		temp_string = sub_string[6]
+		temp_string2 = sub_string[7]
+	part1 = ''
+	part2 = ''
+	if(iterator == 9):
+		part1 = temp_string[:len(temp_string)-2]
+		part2 = temp_string[len(temp_string)-2:]
+	else:
+		part1 = temp_string[:len(temp_string)-3]
+		part2 = temp_string[len(temp_string)-3:]
+	if(iterator != 4 and iterator != 5 and iterator != 6):
+		sub_string[5] = part1
+		sub_string[6] = part2
+		sub_string.append(temp_string2)
+	if(iterator == 4 or iterator == 5 or iterator == 6):
+		sub_string[6] = part1
+		sub_string[7] = part2
+		sub_string.append(temp_string2)	
+	data = " ".join(sub_string)
+
+	# title for the data
+	if(iterator != 4 and iterator != 5 and iterator != 6):
+		cleaned_table.append({
+			'name': sub_string[0],
+			'abbr': sub_string[1],
+			'market_cap': sub_string[2],
+			'price': sub_string[3],
+			'one_Day_changes': sub_string[4],
+			'volumn': sub_string[5],
+			'transparent_volumn': sub_string[6],
+			'circulating_supply': '$' + sub_string[7]
+		})
+	if(iterator == 4 or iterator == 5 or iterator == 6):
+		cleaned_table.append({
+			'name': sub_string[0] + sub_string[1],
+			'abbr': sub_string[2],
+			'market_cap': sub_string[3],
+			'price': sub_string[4],
+			'one_Day_changes': sub_string[5],
+			'volumn': sub_string[6],
+			'transparent_volumn': sub_string[7],
+			'circulating_supply': '$' + sub_string[8]
+		})
+
+	# use json.dump() to write a json file with the cleaned data
+	with open("blockchain_data", 'w', encoding='utf-8') as file:
+		json.dump(cleaned_table,file)
+	if(iterator == 10):
+		break
+	
+# for future reviewing of representing the raw data
+# print(cleaned_table)

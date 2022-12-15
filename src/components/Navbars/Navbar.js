@@ -19,7 +19,7 @@ import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
-import websiteBrand from '../../data/img/dashboard-title.png'
+// import websiteBrand from '../../data/img/dashboard-title.png'
 
 // reactstrap components
 import {

@@ -1,13 +1,13 @@
-import { Doughnut } from "react-chartjs-2";
+import { PolarArea } from "react-chartjs-2";
 
 // defined type of colors so that it would be used in future graphing
 const colors = [
-    "#e60049", "#0bb4ff", "#50e991", "#e6d800", "#9b19f5", "#ffa300", "#dc0ab4", "#b3d4ff", "#00bfa0"
+    "#7eb0d5", "#b2e061", "#fd7f6f", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"
 ]
 
 
-// main function for graphing a donut chart
-const AttackAmountDoughnut = ({data}) => {
+// main function for graphing a Polar chart
+const AttackAmountPolar = ({data}) => {
     // defining the required chartoptions for options under
     const chartOptions = {
         maintainAspectRatio: false,
@@ -15,7 +15,7 @@ const AttackAmountDoughnut = ({data}) => {
             display: false
         },
         tooltips: {
-            backgroundColor: "#f5f5f5",
+            backgroundColor: "#000000",
             titleFontColor: "#333",
             bodyFontColor: "#666",
             bodySpacing: 4,
@@ -45,47 +45,32 @@ const AttackAmountDoughnut = ({data}) => {
 
     // parse data
     
-    
+    const MAX_DATA = Math.max(...data.map(attack => attack.amount))
 
-    const new_arr = data.reduce((acc, obj) => {
-        if(acc[obj.tags]){
-            acc[obj.tags].amount += obj.amount;
-        } else{
-            acc[obj.tags] = obj;
-        }
-        return acc;
-    },{});
-
-    const unique = [];
-    Object.values(new_arr).forEach((obj) => {
-        unique.push(obj);
-    });
-
-    const MAX_DATA = Math.max(...unique.map(attack => attack.amount))
     const chartData = (canvas) => {
         return {
-            // setups and data for dount graph
-            labels: unique.map(attack => attack.tags),
+            // setups and data for polar graph
+            labels: data.map(attack => attack.tags),
             datasets: [
                 {
                     label: "Amount stolen from attacks",
                     fill: true,
-                    backgroundColor: unique.map(
+                    backgroundColor: data.map(
                         attack => 
-                        colors[Math.round((attack.amount / MAX_DATA) * 7)]
+                        colors[Math.round((attack.amount / MAX_DATA) * 8)]
                     ),
-                    borderColor: unique.map(
+                    borderColor: data.map(
                         attack => 
-                        colors[Math.round((attack.amount / MAX_DATA) * 16)]
+                        colors[Math.round((attack.amount / MAX_DATA) * 8)]
                     ),
-                    
+
                     borderDash: [],
                     data: data.map(
                         attack => (
                         attack.amount/ 1000
                     )),
-                    hoverOffset: 40,
-                    borderWidth: 1,
+                    hoverOffset: 50,
+                    borderWidth: 3,
                 }
             ]
         };
@@ -93,7 +78,7 @@ const AttackAmountDoughnut = ({data}) => {
 
     return(    
         // <div className="chart-area">
-            <Doughnut
+            <PolarArea
                 data={chartData}
                 options={chartOptions}
             />
@@ -101,4 +86,4 @@ const AttackAmountDoughnut = ({data}) => {
     )
 }
 
-export default AttackAmountDoughnut
+export default AttackAmountPolar
