@@ -14,6 +14,21 @@ import cosmosLogo from '../data/img/logos/cosmos.png'
 import chainlinkLogo from '../data/img/logos/chainlink.png'
 import loomLogo from '../data/img/logos/loom-network.png'
 import hybrixLogo from '../data/img/logos/hybrix.png'
+import hyperledger_cactusLogo from '../data/img/logos/hyperledger_cactus.png'
+import hyperledger_fireflyLogo from '../data/img/logos/hyperledger_firefly.png'
+import overledgerLogo from '../data/img/logos/Overledger.png'
+import polynetworkLogo from '../data/img/logos/Polynetwork.png'
+import venn_diagram from '../data/img/venn-diagram.png'
+import how_polkadot_works from '../data/img/how/polkadot_how.png'
+import how_polkadot_works2 from '../data/img/how/polkadot_how2.png'
+import how_cosmos_works from '../data/img/how/cosmos_how.png'
+import how_cosmos_works2 from '../data/img/how/cosmos_how2.png'
+import how_chainlink_works from '../data/img/how/chainlink_how.png'
+import how_chainlink_works2 from '../data/img/how/chainlink_how2.png'
+import how_hyperledger_firefly_works from '../data/img/how/hyperledger_firefly_how.png'
+import how_overledger_works from '../data/img/how/overledger_how.png'
+import how_overledger_works2 from '../data/img/how/overledger_how2.png'
+import summary_png from '../data/img/summary.png'
 
 // reactstrap components
 import {
@@ -44,6 +59,22 @@ const projectLogos = {
     'Chainlink': chainlinkLogo,
     'Loom Network': loomLogo,
     'Hybrix': hybrixLogo,
+    'Hyperledger Cactus': hyperledger_cactusLogo,
+    'Hyperledger Firefly': hyperledger_fireflyLogo,
+    'Overledger': overledgerLogo,
+    'Poly Network': polynetworkLogo,
+}
+
+const projecthow = {
+    'Polkadot1': how_polkadot_works,
+    'Polkadot2': how_polkadot_works2,
+    'Cosmos1': how_cosmos_works,
+    'Cosmos2': how_cosmos_works2,
+    'Chainlink1': how_chainlink_works,
+    'Chainlink2': how_chainlink_works2,
+    'Hyperledger Firefly1': how_hyperledger_firefly_works,
+    'Overledger1': how_overledger_works,
+    'Overledger2': how_overledger_works2,
 }
 
 const formatter = new Intl.NumberFormat('en-US', {
@@ -82,6 +113,11 @@ const ProjectsView = () => {
                                     {data.projectName}
                                 </h2>
                             </Col>
+                            <Col md='10' className="align-items-center jusitfy-content-center">
+                                <h2><font size="3" color="#000000">
+                                    Keywords: {data.keywords}
+                                </font></h2>
+                            </Col>
                         </Row>
                     </CardTitle>
                 </CardHeader>
@@ -90,13 +126,19 @@ const ProjectsView = () => {
                 >
                     <CardBody>
                         <Row>
-                            <Col md='6'>
-                                <b>Circulation Supply: </b>
-                                {formatter.format(data.circulationSupply)}
+                            <Col md='12' className="align-items-center jusitfy-content-center">
+                                <b><font size="5" color="808080">Brief Description</font></b>
+                                <h2><font size="3" color="#000000">
+                                    {data.extra.short_description}
+                                </font></h2>
                             </Col>
-                            <Col md='6'>
-                                <b>Total Supply: </b>
-                                {formatter.format(data.totalSupply)}
+                            <Col md='10' className="align-items-center jusitfy-content-center">
+                                <h2><font size="5" color="#000000">
+                                    How does {data.projectName} works:
+                                    <center><img float="left" class="card-img-left" style={{height:'400px', width:'800px' }} src={projecthow[data.projectName+'1']}/></center>
+                                    Explanations of above graph:
+                                    <center><img float="left" class="card-img-left" style={{height:'400px', width:'600px' }} src={projecthow[data.projectName+'2']}/></center>
+                                </font></h2>
                             </Col>
                         </Row>
                         <Row>
@@ -104,13 +146,30 @@ const ProjectsView = () => {
                                 Explorer link: <a href={data.explorerLink} target={'_blank'}>{data.explorerLink}</a>
                             </Col>
                         </Row>
-                        {/* Hi! */}
-                        {/* {JSON.parse(data)} */}
                     </CardBody>
                 </Collapse>
             </Card>
             )}
+            <div class="card">
+                <center>
+                    <div class="card-body">
+                        <h5 class="card-title"><font size="5" color="#909090"><b>Venn Diagram for Nine Interoperability</b></font></h5>
+                    </div>
+                    <img float="left" class="card-img-left" style={{height:'490px', width:'560px' }} src={venn_diagram}/>
+                </center>
+            </div>
+
+            <div class="card">
+                <center>
+                    <div class="card-body">
+                        <h5 class="card-title"><font size="5" color="#909090"><b>Summary of Above Nine Interoperability</b></font></h5>
+                    </div>
+                    <img float="left" class="card-img-left" style={{height:'400px', width:'1260px' }} src={summary_png}/>
+                </center>
+            </div>
         </div>
+
+        
     </>)
 
 }

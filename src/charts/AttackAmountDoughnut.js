@@ -46,7 +46,7 @@ const AttackAmountDoughnut = ({data}) => {
     // parse data
     
     
-
+    /* 
     const new_arr = data.reduce((acc, obj) => {
         if(acc[obj.tags]){
             acc[obj.tags].amount += obj.amount;
@@ -56,25 +56,28 @@ const AttackAmountDoughnut = ({data}) => {
         return acc;
     },{});
 
+    
     const unique = [];
     Object.values(new_arr).forEach((obj) => {
         unique.push(obj);
     });
-
-    const MAX_DATA = Math.max(...unique.map(attack => attack.amount))
+    */
+    // need to change data to unique for combining the data.tags
+    
+    const MAX_DATA = Math.max(...data.map(attack => attack.amount))
     const chartData = (canvas) => {
         return {
             // setups and data for dount graph
-            labels: unique.map(attack => attack.tags),
+            labels: data.map(attack => attack.tags),
             datasets: [
                 {
                     label: "Amount stolen from attacks",
                     fill: true,
-                    backgroundColor: unique.map(
+                    backgroundColor: data.map(
                         attack => 
                         colors[Math.round((attack.amount / MAX_DATA) * 7)]
                     ),
-                    borderColor: unique.map(
+                    borderColor: data.map(
                         attack => 
                         colors[Math.round((attack.amount / MAX_DATA) * 16)]
                     ),

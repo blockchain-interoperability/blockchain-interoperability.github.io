@@ -5,40 +5,85 @@
         "circulationSupply":12430000,
         "totalSupply": 11540000,
         "explorerLink": "https://explorer.polkascan.io/",
+        "keywords": "Decentralized, Scalable, Interoperable, Transferable between multi-blockchains, User-driven Governance",
         "extra": {
-            "something": "project specific information should be stored here"
+            "short_description": "Polkadot is a blockchain network that aims to enable a more decentralized and scalable web. It was created by the Web3 Foundation and is designed to be a more secure, flexible, and scalable alternative to existing blockchain networks. Polkadot allows for the creation of multiple parallel blockchains, which can interact with each other through a shared pool of validators. This allows for greater scalability and interoperability between different blockchains, enabling a more interconnected and decentralized web."
         }
     },{
         "projectName": "Cosmos",
         "circulationSupply":238525000 ,
         "totalSupply": 238525000,
         "explorerLink": "https://explorer.polkascan.io/",
+        "keywords": "Decentralized, Tendermint consensus, Security, Interoperable, IBC Protocol, ecosystem-like",
         "extra": {
-            "something": "project specific information should be stored here"
+            "short_description": "Cosmos is a decentralized network of independent parallel blockchains, each powered by BFT consensus algorithms like Tendermint consensus. The goal of Cosmos is to create an ecosystem of interoperable blockchains that can scale and interoperate with each other, allowing users to build decentralized applications and services with a much larger scale and complexity than currently possible. This can help to drive greater adoption and use of blockchain technology for a wide range of applications, from finance and supply chain management to gaming and social media."
         }
     },{
         "projectName": "Chainlink",
         "circulationSupply":491600000,
         "totalSupply": 1000000000,
         "explorerLink": "https://explorer.chain.link/",
+        "keywords": "Decentralized Oracle Network, Smart Contract, Multi-Blockchain, Real-world Data, Encrypted",
         "extra": {
-            "something": "project specific information should be stored here"
+            "short_description": "Chainlink is a decentralized network that connects blockchain-based smart contracts to external data sources and APIs. It allows smart contracts to access real-world data, events, and other off-chain services in a secure and reliable manner. This allows developers to build complex and sophisticated decentralized applications that can interact with the real world, opening up many new possibilities for blockchain technology. Chainlink uses a network of decentralized oracle nodes to retrieve and verify data from external sources, providing a tamper-proof and trustworthy source of data for smart contracts."
         }
     },{
         "projectName": "Loom Network",
         "circulationSupply":602423000,
         "totalSupply": 1000000000,
         "explorerLink": "https://etherscan.io/token/0x42476f744292107e34519f9c357927074ea3f75d",
+        "keywords": "Ethereum-based, Decentralized Applications, Platform-as-a-Service, Multi-Blockchain, Semi Public",
         "extra": {
-            "something": "project specific information should be stored here"
+            "short_description": "Loom Network is a multichain interoperability platform live in production since early 2018. Optimized for scaling high-performance dapps that require a fast and smooth user experience, the network allows dapps to offer a UX comparable to traditional applications and onboard new users without the friction of needing to download crypto wallet software."
         }
     },{
         "projectName": "Hybrix",
         "circulationSupply":2273000,
         "totalSupply": 7000000000,
         "explorerLink": "https://etherscan.io/token/0x9b53e429b0badd98ef7f01f03702986c516a5715",
+        "keywords": "Open Platform, P2P transaction, Decentralized, Web Wallet, Protocol, Blockchain-agnostic",
         "extra": {
-            "something": "project specific information should be stored here"
+            "short_description": "Hybrix is Technically borderless cross-chain platform hybrix unites all digital ledgers. Swap, store, build, explore and transfer across a myriad of different ledgers all at once."
         }
+    },{
+        "projectName": "Hyperledger Cactus",
+        "circulationSupply":2273000,
+        "totalSupply": 7000000000,
+        "explorerLink": "https://etherscan.io/token/0x9b53e429b0badd98ef7f01f03702986c516a5715",
+        "keywords": "Integration, Flexibility, Multi-faceted Platform, Abstracted API",
+        "extra": {
+            "short_description": "Hyperledger Cactus is an open-source blockchain platform developed by the Linux Foundation's Hyperledger project. It is designed to enable interoperability between different blockchains and blockchain networks, allowing users to easily and securely connect and share data and assets between different blockchain networks. This can help to promote greater adoption and use of blockchain technology, as it allows users to leverage the benefits of multiple blockchains without being limited to a single platform or network. Cactus is built on top of the Hyperledger Besu Ethereum client and uses the Ethereum Virtual Machine (EVM) to run smart contracts."
+        }
+        
+    },{
+        "projectName": "Hyperledger Firefly",
+        "circulationSupply":2273000,
+        "totalSupply": 7000000000,
+        "explorerLink": "https://etherscan.io/token/0x9b53e429b0badd98ef7f01f03702986c516a5715",
+        "keywords": "Blockchain Protocol, Integration, On-chain, Multi-Blockchain",
+        "extra": {
+            "short_description": "Hyperledger FireFly is the first open source Supernode: a complete stack for enterprises to build and scale secure Web3 applications. The FireFly API for digital assets, data flows, and blockchain transactions makes it radically faster to build production-ready apps on popular chains and protocols."
+        }
+        
+    },{
+        "projectName": "Overledger",
+        "circulationSupply":2273000,
+        "totalSupply": 7000000000,
+        "explorerLink": "https://etherscan.io/token/0x9b53e429b0badd98ef7f01f03702986c516a5715",
+        "keywords": "Private Keys, API, Decentralised Application, Symmetric Cryptography",
+        "extra": {
+            "short_description": "Overledger is the world’s first blockchain operating system (OS) that not only inter-connects blockchains but also existing enterprise platforms, applications and networks to blockchain and facilitates the creation of internet scale multi-chain applications otherwise known as mApps."
+        }
+        
+    },{
+        "projectName": "Poly Network",
+        "circulationSupply":2273000,
+        "totalSupply": 7000000000,
+        "explorerLink": "https://etherscan.io/token/0x9b53e429b0badd98ef7f01f03702986c516a5715",
+        "keywords": "Digit Assets, First Non-fungible Token, Cross-chain, Decentralized Applications",
+        "extra": {
+            "short_description": "Poly Network is the world’s leading cross-chain protocol for heterogeneous chains, enhancing connections between ledgers by providing Web 3.0 interoperability. Its uniquely designed cross-chain bridge technology executes cross-chain transactions by deploying smart contracts on the source chain. This enables communication between heterogeneous chains, including the most popular public chains, right at the protocol layer."
+        }
+        
     }
 ]
