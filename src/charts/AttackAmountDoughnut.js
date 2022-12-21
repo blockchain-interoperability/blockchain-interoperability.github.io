@@ -1,3 +1,4 @@
+// import the desired module from react library
 import { Doughnut } from "react-chartjs-2";
 
 // defined type of colors so that it would be used in future graphing
@@ -43,9 +44,8 @@ const AttackAmountDoughnut = ({data}) => {
         }
     }
 
-    // parse data
-    
-    
+    // uncomment this part of code would merge the different tags of attacks into "unique" ones
+    // so that all duplicate tags would be removed except one
     /* 
     const new_arr = data.reduce((acc, obj) => {
         if(acc[obj.tags]){
@@ -62,8 +62,9 @@ const AttackAmountDoughnut = ({data}) => {
         unique.push(obj);
     });
     */
-    // need to change data to unique for combining the data.tags
     
+
+    // set the surrounding data and variable for charts
     const MAX_DATA = Math.max(...data.map(attack => attack.amount))
     const chartData = (canvas) => {
         return {
@@ -94,14 +95,14 @@ const AttackAmountDoughnut = ({data}) => {
         };
     }
 
-    return(    
-        // <div className="chart-area">
-            <Doughnut
-                data={chartData}
-                options={chartOptions}
-            />
-        // </div>
+    // return the doughnut chart
+    return(
+        <Doughnut
+            data={chartData}
+            options={chartOptions}
+        />
     )
 }
 
+// export the requiring function for another js file
 export default AttackAmountDoughnut

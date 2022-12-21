@@ -1,9 +1,5 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
-// react plugin used to create charts
-import { Line, Bar } from "react-chartjs-2";
-
 import AttackAmountLine from '../charts/AttackAmountLine.js'
 import AttackAmountBubble from "charts/AttackAmountBubble.js";
 import AttackAmountDoughnut from "charts/AttackAmountDoughnut.js";
@@ -11,39 +7,14 @@ import AttackAmountPolar from "charts/AttackAmountPolar.js";
 
 import rawAttackData from '../data/attackData.json'
 import block_data from '../data/blockchain_Data.json'
-import $ from 'jquery';
 
 // reactstrap components
 import {
-  Button,
-  ButtonGroup,
   Card,
   CardHeader,
   CardBody,
   CardTitle,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  Label,
-  FormGroup,
-  Input,
-  Table,
-  Row,
-  Col,
-  UncontrolledTooltip
 } from "reactstrap";
-
-// core components
-import {
-  chartExample1,
-  chartExample2,
-  chartExample3,
-  chartExample4
-} from "variables/charts.js";
-
-
-
 
 const AttackDashboard = () => {
 
@@ -52,8 +23,6 @@ const AttackDashboard = () => {
         'name',
         'amount',
         'cause',
-        // 'notes',
-        // 'ref',
         'tags'
     ]
 
@@ -67,6 +36,7 @@ const AttackDashboard = () => {
         }
     })
 
+    // again parse the dates here
     const parseValue = (col,str) => {
         let parsed = str
         switch(col){
@@ -83,10 +53,12 @@ const AttackDashboard = () => {
         total += value.amount;
         last_attack = new Date(value.date);
     }
+    // save the date for the last attack happened
     var Y = last_attack.getFullYear() + '-';
     var M = (last_attack.getMonth()+1 < 10 ? '0'+(last_attack.getMonth()+1) : last_attack.getMonth()+1) + '-';
     var D = last_attack.getDate() + ' ';
 
+    // for top-10 crypto-currency, create lists to store the separate data for them
     var block_name = [];
     var block_abbr = [];
     var block_market_cap = [];
@@ -107,6 +79,19 @@ const AttackDashboard = () => {
         block_circulating_supply.push(valuea.circulating_supply);
     }
 
+    /* The following part of code is trying to commit the following designs:
+    1. Top Description of why are we studying Blockchain Interoperability with its explanation
+    2. Besides the description, top four single box each showing a designed data: Total amount of money for all the steal;
+    Total number of attacks happened; When did the last attack happened(up to date); Average amount of money stolen from each attack,
+    please note this part of data is based on the real-time data from attackData.json, which could be changed once the file is modified
+    3. A table containing three data visualization that are accomplished by the react-chartjs-3 module in react. For more detailed data,
+    please visit: https://www.npmjs.com/package/react-chartjs-3?activeTab=readme. Those three visualization are bubble chart, line
+    chart and doughnut chart.
+    4. Also a Polar data visualiation as a table, please see above for the same information.
+    5. Top 10 crypto-currency with their relavent data scraped by Webscrap.txt(python) on Nomics website, Nomics is an API-first
+    cryptoasset data company delivering professional-grade market data APIs to institutional crypto investors & exchanges. Please visit
+    https://nomics.com/ for more information. In order to comment this part on the webpage, please delete the code part of line 226-347.
+    */
     return (
     <>
         <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
@@ -120,14 +105,9 @@ const AttackDashboard = () => {
                     However, not all developments in the space are positive. There has been an increasing amount of incidents in the 
                     blockchain space as well, such as hacks and spams. In just 2022, over 1.9 million dollars were lost in various incidents.
                      These events have significant consequences for those who have invested in such projects.</font></h5>
-                     <script>
-                        // <a href="#" class="btn btn-primary">Link to Our Paper</a>
-                     </script>
                 </div>
             </div>
-            <script>
-                // Top four data 
-            </script>
+
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card text-center">
@@ -163,9 +143,6 @@ const AttackDashboard = () => {
                 </div>
             </div>
 
-            <script>
-                // Middle three data visualization within one table 
-            </script>
             <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="transparent">
             <tbody>
             <tr>
@@ -246,9 +223,6 @@ const AttackDashboard = () => {
             </tbody>
             </table>
             
-            <script>
-                // Last part of top 10 Blockchain Cryptocurrency information
-            </script>
             <div class="row row-cols-1 row-cols-md-2 g-10">  
                 
                 <div class="col">

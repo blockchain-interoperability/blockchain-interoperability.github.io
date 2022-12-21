@@ -1,3 +1,4 @@
+// import the desired module from react library
 import { PolarArea } from "react-chartjs-2";
 
 // defined type of colors so that it would be used in future graphing
@@ -43,8 +44,26 @@ const AttackAmountPolar = ({data}) => {
         }
     }
 
-    // parse data
+    // uncomment this part of code would merge the different tags of attacks into "unique" ones
+    // so that all duplicate tags would be removed except one
+    /* 
+    const new_arr = data.reduce((acc, obj) => {
+        if(acc[obj.tags]){
+            acc[obj.tags].amount += obj.amount;
+        } else{
+            acc[obj.tags] = obj;
+        }
+        return acc;
+    },{});
+
     
+    const unique = [];
+    Object.values(new_arr).forEach((obj) => {
+        unique.push(obj);
+    });
+    */
+    
+    // set the surrounding data and variable for charts
     const MAX_DATA = Math.max(...data.map(attack => attack.amount))
 
     const chartData = (canvas) => {
@@ -76,14 +95,14 @@ const AttackAmountPolar = ({data}) => {
         };
     }
 
+    // return the polar chart
     return(    
-        // <div className="chart-area">
-            <PolarArea
-                data={chartData}
-                options={chartOptions}
-            />
-        // </div>
+        <PolarArea
+            data={chartData}
+            options={chartOptions}
+        />
     )
 }
 
+// export the requiring function for another js file
 export default AttackAmountPolar
