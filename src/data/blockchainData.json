@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Bitcoin",
+        "abbr": "BTC",
+        "marketCap": "$326.08B",
+        "price": "$16,955.60",
+        "oneDayChange": "-1.41%",
+        "volume": "$26.89B",
+        "transparentVolume": "54%",
+        "circulatingSupply": "$19,231,581"
+    },
+    {
+        "name": "Ethereum",
+        "abbr": "ETH",
+        "marketCap": "$153.28B",
+        "price": "$1,252.58",
+        "oneDayChange": "-1.72%",
+        "volume": "$9.77B",
+        "transparentVolume": "34%",
+        "circulatingSupply": "$122,373,866"
+    },
+    {
+        "name": "Tether",
+        "abbr": "USDT",
+        "marketCap": "$65.70B",
+        "price": "$0.999855",
+        "oneDayChange": "-0.02%",
+        "volume": "$43.80B",
+        "transparentVolume": "37%",
+        "circulatingSupply": "$65,708,194,112"
+    },
+    {
+        "name": "BinanceCoin",
+        "abbr": "BNB",
+        "marketCap": "$46.20B",
+        "price": "$282.93",
+        "oneDayChange": "-2.55%",
+        "volume": "$1.19B",
+        "transparentVolume": "32%",
+        "circulatingSupply": "$163,276,975"
+    },
+    {
+        "name": "USDCoin",
+        "abbr": "USDC",
+        "marketCap": "$42.82B",
+        "price": "$0.999385",
+        "oneDayChange": "-0.15%",
+        "volume": "$2.46B",
+        "transparentVolume": "67%",
+        "circulatingSupply": "$42,848,783,130"
+    },
+    {
+        "name": "BinanceUSD",
+        "abbr": "BUSD",
+        "marketCap": "$22.08B",
+        "price": "$0.99923",
+        "oneDayChange": "-0.09%",
+        "volume": "$7.70B",
+        "transparentVolume": "88%",
+        "circulatingSupply": "$22,092,580,066"
+    },
+    {
+        "name": "XRP",
+        "abbr": "XRP",
+        "marketCap": "$18.99B",
+        "price": "$0.376758",
+        "oneDayChange": "-2.45%",
+        "volume": "$937.88M",
+        "transparentVolume": "35%",
+        "circulatingSupply": "$50,395,461,568"
+    },
+    {
+        "name": "Dogecoin",
+        "abbr": "DOGE",
+        "marketCap": "$12.27B",
+        "price": "$0.089394",
+        "oneDayChange": "-8.02%",
+        "volume": "$1.28B",
+        "transparentVolume": "33%",
+        "circulatingSupply": "$137,271,986,384"
+    },
+    {
+        "name": "Cardano",
+        "abbr": "ADA",
+        "marketCap": "$10.32B",
+        "price": "$0.305084",
+        "oneDayChange": "-2.38%",
+        "volume": "$858.94M",
+        "transparentVolume": "8%",
+        "circulatingSupply": "$33,833,885,394"
+    },
+    {
+        "name": "Polygon",
+        "abbr": "MATIC",
+        "marketCap": "$7.95B",
+        "price": "$0.888211",
+        "oneDayChange": "-2.44%",
+        "volume": "$398.68M",
+        "transparentVolume": "41%",
+        "circulatingSupply": "$8,955,469,069"
+    }
+]

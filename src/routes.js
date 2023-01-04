@@ -41,12 +41,12 @@ var routes = [
     name: "Interoperability Projects",
     component: ProjectsView,
   },
-  { 
-   path: "/dashboard",
-    name: "Dashboard",
-    icon: "tim-icons icon-chart-pie-36",
-   component: Dashboard,
-  },
+  // { 
+  //  path: "/dashboard",
+  //   name: "Dashboard",
+  //   icon: "tim-icons icon-chart-pie-36",
+  //  component: Dashboard,
+  // },
   // {
   //   path: "/icons",
   //   name: "Icons",

@@ -12,9 +12,9 @@ const AttackAmountPolar = ({data}) => {
     // defining the required chartoptions for options under
     const chartOptions = {
         maintainAspectRatio: false,
-        legend: {
-            display: false
-        },
+        // legend: {
+        //     display: false
+        // },
         tooltips: {
             backgroundColor: "#000000",
             titleFontColor: "#333",
