@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.898e5f9d.css",
-    "main.js": "/static/js/main.dd2c29b2.js",
+    "main.js": "/static/js/main.35c0b38b.js",
     "static/media/hashtags.png": "/static/media/hashtags.f4a0d623dbbb4d9b7a7e.png",
     "static/media/fa-solid-900.ttf": "/static/media/fa-solid-900.e615bbcb258550973c16.ttf",
     "static/media/hybrix_how2.jpg": "/static/media/hybrix_how2.70b2860d8cc393c2b440.jpg",
@@ -56,10 +56,10 @@
     "static/media/fa-v4compatibility.woff2": "/static/media/fa-v4compatibility.afac89562a5301459069.woff2",
     "index.html": "/index.html",
     "main.898e5f9d.css.map": "/static/css/main.898e5f9d.css.map",
-    "main.dd2c29b2.js.map": "/static/js/main.dd2c29b2.js.map"
+    "main.35c0b38b.js.map": "/static/js/main.35c0b38b.js.map"
   },
   "entrypoints": [
     "static/css/main.898e5f9d.css",
-    "static/js/main.dd2c29b2.js"
+    "static/js/main.35c0b38b.js"
   ]
 }
