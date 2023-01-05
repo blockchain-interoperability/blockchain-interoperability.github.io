@@ -25,13 +25,11 @@ function Footer() {
   return (
     <footer className="footer">
       <Container fluid>
-        {/* <Nav>
+        <Nav>
           <NavItem>
-            <NavLink href="https://www.creative-tim.com/?ref=bdr-user-archive-footer">
-              NAME
-            </NavLink>
+            The authors acknowledge the support from NSF IUCRC CRAFT center research grant (CRAFT Grant #22006) for this research. The opinions expressed in this website do not necessarily represent the views of NSF IUCRC CRAFT.  
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavLink href="https://www.creative-tim.com/presentation?ref=bdr-user-archive-footer">
               About Us
             </NavLink>
@@ -40,8 +38,8 @@ function Footer() {
             <NavLink href="https://www.creative-tim.com/blog?ref=bdr-user-archive-footer">
               Blog
             </NavLink>
-          </NavItem>
-        </Nav> */}
+          </NavItem> */}
+        </Nav>
       </Container>
     </footer>
   );
